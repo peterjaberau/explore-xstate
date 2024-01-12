@@ -1,16 +1,23 @@
 <script setup lang="ts">
 // import { RouterLink, RouterView } from 'vue-router'
-import { useActorRef, useSelector } from "@xstate/vue";
-import { toggleMachine } from "@/machines/toggle/toggleMachine"
+import FlowMachine  from "@/views/flow-machine.vue";
+import ToggleMachine from "@/views/toggle-machine.vue";
 
-const actorToggleRef = useActorRef(toggleMachine);
-const selectorToggleRef = useSelector(actorToggleRef, (s) => s);
 
 </script>
 
 <template>
-  {{selectorToggleRef}}
-  <button @click="() => actorToggleRef.send({type: 'toggle'})" type="button">Toggle</button>
+
+
+  <div class="grid grid-cols-2 gap-x-5">
+    <flow-machine />
+    <toggle-machine/>
+
+  </div>
+
+
+
+
 
 <!--  <RouterView />-->
 </template>
