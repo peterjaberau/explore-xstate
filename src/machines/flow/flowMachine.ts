@@ -1,5 +1,6 @@
 import { createMachine, fromPromise } from 'xstate'
 
+
 export const flowMachine = createMachine(
   {
     id: 'flow-machine',
@@ -72,8 +73,8 @@ export const flowMachine = createMachine(
 
 // import { assign, setup,  and, or, not } from 'xstate';
 
-export const fetchLogic = fromPromise(async ({ input }: { input: string }) => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
-    const json = await response.json();
-    return json as Array<{}>;
-});
+// export const fetchLogic = fromPromise(async ({ input }: { input: string }) => {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+//     const json = await response.json();
+//     return json as Array<{}>;
+// });

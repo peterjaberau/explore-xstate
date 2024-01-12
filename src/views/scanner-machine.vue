@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useActorRef, useSelector } from "@xstate/vue";
-import { flowMachine } from "@/machines/flow/flowMachine"
+import { scannerMachine } from "@/machines/scanner/scannerMachine"
 
 
 const localState = ref({})
@@ -14,7 +14,7 @@ localState.value = {
   }
 };
 
-const actorRef = useActorRef(flowMachine, {  input: localState.value  });
+const actorRef = useActorRef(scannerMachine, {  input: localState.value  });
 const selectorRef = useSelector(actorRef, (s) => s);
 
 
@@ -25,7 +25,7 @@ const selectorRef = useSelector(actorRef, (s) => s);
 <template>
 
   <div class="shadow">
-    <div class="font-bold p-3">Flow machine</div>
+    <div class="font-bold p-3">Scanner machine</div>
     <div class="flex flex-col h-full justify-start">
       <div class="flex flex-row  p-3">
         <div class="flex-1">Current State</div>
